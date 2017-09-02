@@ -23,6 +23,6 @@ while (count < 30) {
     msg += count;
   }
 
-  console.log("msg");
+  console.log(msg);
 
 }

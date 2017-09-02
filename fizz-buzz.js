@@ -1,3 +1,5 @@
+{ //block added so both scripts can run on the same web page.
+
 const outputElement = document.getElementById("output");
 const listTarget = document.createElement("ul");
 outputElement.appendChild(listTarget);
@@ -28,5 +30,7 @@ while (count < 30) {
 
   item.appendChild(text);
   listTarget.appendChild(item);
+
+}
 
 }
