@@ -1,6 +1,4 @@
-const outputElement = document.getElementById("output");
-const listTarget = document.createElement("ul");
-outputElement.appendChild(listTarget);
+
 
 let count = 0
 
