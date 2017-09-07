@@ -2,10 +2,23 @@
 
   const button = document.getElementById("btn-count");
   button.addEventListener("click", function () {
+
+    const outputElement = document.getElementById("output");
+    removeAllChildren(outputElement);
+
     const maxInput = document.getElementById("max");
     const max = maxInput.value;
     fizzBuzzGame(max);
   });
+
+
+  function removeAllChildren(element) {
+    const children = element.children;
+    for (let i = 0; i < children.length; i++) {
+      let current = children[i];
+      element.removeChild(current);
+    }
+  }
 
 
   function fizzBuzzGame(maxCount) {
