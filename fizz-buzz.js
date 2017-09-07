@@ -1,36 +1,45 @@
 { //block added so both scripts can run on the same web page.
 
-const outputElement = document.getElementById("output");
-const listTarget = document.createElement("ul");
-outputElement.appendChild(listTarget);
+  const button = document.getElementById("btn-count");
+  button.addEventListener("click", function () {
+    const maxInput = document.getElementById("max");
+    const max = maxInput.value;
+    fizzBuzzGame(max);
+  });
 
-let count = 0
 
-while (count < 30) {
+  function fizzBuzzGame(maxCount) {
 
-  //Change the counter first so we don't forget
-  count += 1;
+    const outputElement = document.getElementById("output");
+    const listTarget = document.createElement("ul");
+    outputElement.appendChild(listTarget);
+    let count = 0
 
-  let msg = "";
+    while (count < maxCount) {
 
-  if (count % 3 === 0) {
-    msg += "Fizz ";
+      //Change the counter first so we don't forget
+      count += 1;
+
+      let msg = "";
+
+      if (count % 3 === 0) {
+        msg += "Fizz ";
+      }
+
+      if (count % 5 === 0) {
+        msg += "Buzz ";
+      }
+
+      if (msg === "") {
+        msg += count;
+      }
+
+      const item = document.createElement("li");
+      const text = document.createTextNode(msg);
+
+      item.appendChild(text);
+      listTarget.appendChild(item);
+
+    }
   }
-
-  if (count % 5 === 0) {
-    msg += "Buzz ";
-  }
-
-  if (msg === "") {
-    msg += count;
-  }
-
-  const item = document.createElement("li");
-  const text = document.createTextNode(msg);
-
-  item.appendChild(text);
-  listTarget.appendChild(item);
-
-}
-
 }
